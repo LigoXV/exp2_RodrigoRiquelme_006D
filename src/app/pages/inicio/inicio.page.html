@@ -2,7 +2,7 @@
   <ion-toolbar >
     <ion-title slot="end">Inicio</ion-title>
     <ion-avatar>
-      <ion-img src="/assets/person-circle-outline.svg" ></ion-img>
+      <ion-img routerLink= "/login"src="/assets/person-circle-outline.svg" ></ion-img>
     </ion-avatar>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,7 @@
       {{c.name}}
     </ion-item>
   </ion-list>
-  <br><br><br><br><br><br>
+
   <h2 class="ion-margin"> Los mas vendidos</h2>
   <ion-slides pager="true" [options]="slideOpts">
     <ion-slide>
