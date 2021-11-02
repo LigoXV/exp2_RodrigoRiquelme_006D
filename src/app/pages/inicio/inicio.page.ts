@@ -26,6 +26,12 @@ export class InicioPage implements OnInit {
       name: "Productos",
       redirecTo: "/productos"
     },
+
+    {
+      icon: 'cloud-done-outline', 
+      name: 'Crud', 
+      redirecTo: '/crud'
+    }
   ];
 
   constructor() { }
