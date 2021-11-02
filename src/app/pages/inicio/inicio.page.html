@@ -27,4 +27,32 @@
       <ion-img src="/assets/iphone1.png"></ion-img>
     </ion-slide>
   </ion-slides>
+
+  <h2 class="ion-margin"> Noticias apple</h2>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
+                *ngFor ="let api of apii; let i= index">
+
+          <ion-card  color="dark">
+            <ion-card-header>
+              <ion-card-subtitle>
+                  <span class="text">{{i + 1 }}</span>
+                  <span class="noticia-name">{{api.source.name}} </span>
+              </ion-card-subtitle>
+              <ion-card-title>{{api.title}}</ion-card-title>
+            </ion-card-header>    
+            
+            <ion-img  *ngIf="api.urlToImage"
+                      [src]="api.urlToImage"></ion-img>   
+            
+            <ion-card-content>
+              <p class="noticia-description">
+                {{api.description}}
+              </p>
+            </ion-card-content>          
+          </ion-card>
+      </ion-col>  
+    </ion-row>
+  </ion-grid>
 </ion-content>

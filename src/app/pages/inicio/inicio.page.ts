@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MiapiService} from 'src/app/services/miapi.service';
+import {Article} from '../../interfaces/interfaces';
 
 interface Componente{
   icon: string;
@@ -13,6 +15,8 @@ interface Componente{
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
+
+  apii: Article[] = []
 
   componentes:Componente[] = [
     {
@@ -34,9 +38,13 @@ export class InicioPage implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private MiapiService: MiapiService) { }
 
   ngOnInit() {
+    this.MiapiService.getTopHeadLines().subscribe(resp=>{
+      console.log('miapi', resp);
+      this.apii.push(...resp.articles)
+    });
   }
 
 }
